@@ -86,6 +86,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Build Script\Build.ps1" />
+    <None Include="Build Script\NewBuild.ps1" />
+    <None Include="Build Script\NewBuildTasks.ps1" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
