@@ -4,13 +4,17 @@ properties {
     $config = 'Debug'; 
 }
 
-task -name Clean -description "Deletes all build artifacts" -action {
+task -name ValidateConfig -action { 
+    assert -conditionToCheck ('Debug','Release' -contains $config ) -failureMessage "Please select Debug or Release only" 
+    }
+
+task -name Clean -depends ValidateConfig -description "Deletes all build artifacts" -action {
     exec { 
             msbuild "\\psf\Dropbox\Software Projects\C#\FizzBuzzInterview\FizzBuzzInterview.sln" /t:Clean /p:Configuration=$config
         }
 }
 
-task -name Build -description "Builds the outdated artifacts" -action { 
+task -name Build -depends ValidateConfig -description "Builds the outdated artifacts" -action { 
     exec { 
             msbuild "\\psf\Dropbox\Software Projects\C#\FizzBuzzInterview\FizzBuzzInterview.sln" /t:Build /p:Configuration=$config
         }
