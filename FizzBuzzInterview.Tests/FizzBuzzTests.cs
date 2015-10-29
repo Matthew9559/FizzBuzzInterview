@@ -8,22 +8,29 @@ namespace FizzBuzzInterview.Tests
         [Test]
         public void TestingBelowZeroAsInputFizzBuzz()
         {
-            FizzBuzz belowZeroFizzBuzz = new FizzBuzz();
+            FizzBuzz belowZeroFizzBuzzExpected = new FizzBuzz();
+            FizzBuzz belowZeroFizzBuzzActual = new FizzBuzz();
 
-            var result = belowZeroFizzBuzz.DoFizzBuzz(-1);
+            belowZeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 or less than 2147483648");
 
-            //Made check for null since fizzBuzzList would be empty if didn't hit else condition in FizzBuzz.cs
-            Assert.That(result, Is.Null); 
+             var resultExpectedBelowZero = belowZeroFizzBuzzExpected.fizzBuzzList;
+             var resultActualBelowZero = belowZeroFizzBuzzActual.DoFizzBuzz(-10);
+
+            CollectionAssert.AreEqual(resultExpectedBelowZero, resultActualBelowZero); 
         }
 
         [Test]
         public void TestingZeroAsInputFizzBuzz()
         {
-            FizzBuzz zeroFizzBuzz = new FizzBuzz();
+            FizzBuzz zeroFizzBuzzExpected = new FizzBuzz();
+            FizzBuzz zeroFizzBuzzActual = new FizzBuzz();
 
-            var result = zeroFizzBuzz.DoFizzBuzz(0);
+            zeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 or less than 2147483648");
 
-            Assert.That(result, Is.Null);
+            var resultExpectedZero = zeroFizzBuzzExpected.fizzBuzzList;
+            var resultActualZero = zeroFizzBuzzActual.DoFizzBuzz(0);
+
+            CollectionAssert.AreEqual(resultExpectedZero, resultActualZero);
         }
 
         [Test]
