@@ -11,7 +11,7 @@ namespace FizzBuzzInterview.Tests
             FizzBuzz belowZeroFizzBuzzExpected = new FizzBuzz();
             FizzBuzz belowZeroFizzBuzzActual = new FizzBuzz();
 
-            belowZeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 or less than 2147483648");
+            belowZeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 and less than 2147483648");
 
              var resultExpectedBelowZero = belowZeroFizzBuzzExpected.fizzBuzzList;
              var resultActualBelowZero = belowZeroFizzBuzzActual.DoFizzBuzz(-10);
@@ -25,7 +25,7 @@ namespace FizzBuzzInterview.Tests
             FizzBuzz zeroFizzBuzzExpected = new FizzBuzz();
             FizzBuzz zeroFizzBuzzActual = new FizzBuzz();
 
-            zeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 or less than 2147483648");
+            zeroFizzBuzzExpected.fizzBuzzList.Add("Please enter a value that is greater than 0 and less than 2147483648");
 
             var resultExpectedZero = zeroFizzBuzzExpected.fizzBuzzList;
             var resultActualZero = zeroFizzBuzzActual.DoFizzBuzz(0);

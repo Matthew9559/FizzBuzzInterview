@@ -33,7 +33,7 @@ namespace FizzBuzzInterview
             }
             else
             {
-                fizzBuzzList.Add("Please enter a value that is greater than 0 or less than 2147483648");
+                fizzBuzzList.Add("Please enter a value that is greater than 0 and less than 2147483648");
                 return fizzBuzzList;
             }
         }
